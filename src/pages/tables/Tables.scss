@@ -1,7 +1,7 @@
 .tables_wrapper {
   text-align: center;
   h1 {
-    //width: 100%;
+    color: #337ab7;
   }
 
   .tables {
@@ -29,13 +29,31 @@
             }
             td {
               img {
-                width: 25px;
+                width: 20px;
                 height: auto;
               }
 
               .VueTables__highlight b {
                 background: yellow;
                 color: red;
+              }
+
+              .VueTables__child-row-toggler {
+                width: 16px;
+                height: 16px;
+                line-height: 16px;
+                display: block;
+                margin: auto;
+                text-align: center;
+                font-size: 1.5em;
+              }
+
+              .VueTables__child-row-toggler--closed::before {
+                content: "+";
+              }
+
+              .VueTables__child-row-toggler--open::before {
+                content: "-";
               }
             }
           }

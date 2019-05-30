@@ -9,6 +9,9 @@
         <template slot="image" scope="props">
           <img :src="props.row.image" alt="" width="50" height="50">
         </template>
+        <template slot="child_row" slot-scope="props">
+          The link to {{props.row.name}} is <a :href="props.row.url" target="_blank">{{props.row.url}}</a>
+        </template>
       </v-client-table>
     </div>
   </div>
@@ -19,8 +22,7 @@
     name: 'Tables',
     data () {
       return {
-        title: 'vue-tables-2 Example',
-        // imgSrc: 'https://cdn.auth0.com/blog/vuejs/vue-logo.png',
+        title: 'JESSIE\'s vue-tables-2 Example',
         columns: ["id", "image", "name", "age", "email", "isTrue" ], // 테이블 컬럼
         tableData: this.getData(), // 테이블 데이터
         options: {
@@ -46,7 +48,7 @@
             filterPlaceholder: 'Search',
             filter: "Search :",
             filterBy: 'Search {column}',
-            count: "", // 기본값 예시 : Showing 1 to 10 of 250 records
+            // count: "", // 기본값 예시 : Showing 1 to 10 of 250 records
           },
           pagination: { chunk: 5, dropdown: false }, // 페이지네이션 세팅
           // compileTemplates: true,
@@ -71,7 +73,8 @@
             'email': `sample${i}@example.com`,
             'age': `${this.getRandomInt(10, 100)}`,
             'isTrue': `${i % 2 == 0 ? true : false}`,
-            'image': 'https://www.netfort.com/assets/user.png'
+            'image': 'https://www.netfort.com/assets/user.png',
+            'url': 'http://maxst.com',
           })
         }
         return arr;
