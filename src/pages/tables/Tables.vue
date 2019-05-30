@@ -38,7 +38,7 @@
             age: 'User Age',
             email: 'User Email',
             isTrue: 'User isTrue',
-            birth_date: 'Birth Date'
+            image: 'User Image'
           },
           sortable: ['id', 'name', 'age', 'isTrue'], // 정렬 기준에 포함시킬 데이터
           filterable: ['id', 'name', 'age', 'email', 'isTrue'], // 검색 필터에 포함시킬 데이터
@@ -50,7 +50,8 @@
           },
           pagination: { chunk: 5, dropdown: false }, // 페이지네이션 세팅
           // compileTemplates: true,
-          fields: ['__slot:image']
+          fields: ['__slot:image'],
+          highlightMatches: true,
         }
       }
     },
