@@ -1,27 +1,3 @@
-@charset "utf-8";
-// @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  src:url(/static/font.woff2) format('woff2');
-}
-
-// @font-face {
-//   font-family: 'Noto Sans KR';
-//   font-style: normal;
-//   font-weight: 700;
-//   src: url(/static/font_bold.woff2) format('woff2');
-// }
-
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  src: url(/static/font_bold.woff2) format('woff2');
-}
-
 /* Common */
 body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,a,button,select{margin:0;padding:0}
 body,input,textarea,select,button,table{font-family: 'Noto Sans KR', sans-serif,dotum,sans-serif;}
