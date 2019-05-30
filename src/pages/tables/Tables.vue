@@ -6,6 +6,9 @@
         <a slot="email" slot-scope="props" :href="`mailto:${props.row.email}`">
           {{props.row.email}}
         </a>
+        <template slot="image" scope="props">
+          <img :src="props.row.image" alt="" width="50" height="50">
+        </template>
       </v-client-table>
     </div>
   </div>
@@ -17,7 +20,8 @@
     data () {
       return {
         title: 'vue-tables-2 Example',
-        columns: ["id", "name", "age", "email", "isTrue", "image"], // 테이블 컬럼
+        // imgSrc: 'https://cdn.auth0.com/blog/vuejs/vue-logo.png',
+        columns: ["id", "image", "name", "age", "email", "isTrue" ], // 테이블 컬럼
         tableData: this.getData(), // 테이블 데이터
         options: {
           filterByColumn: true, // 컬럼별 검색 기능
@@ -46,6 +50,7 @@
           },
           pagination: { chunk: 5, dropdown: false }, // 페이지네이션 세팅
           // compileTemplates: true,
+          fields: ['__slot:image']
         }
       }
     },
@@ -65,7 +70,7 @@
             'email': `sample${i}@example.com`,
             'age': `${this.getRandomInt(10, 100)}`,
             'isTrue': `${i % 2 == 0 ? true : false}`,
-            'image': `<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mooncake1.jpg/300px-Mooncake1.jpg'/>`
+            'image': 'https://www.netfort.com/assets/user.png'
           })
         }
         return arr;

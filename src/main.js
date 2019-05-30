@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import { ClientTable } from "vue-tables-2";
 
-
 Vue.config.productionTip = false
 let options = {};
 let useVuex = false;
