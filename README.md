@@ -1,6 +1,6 @@
-# Sample Table
+# VueTables2
 
-> Sample Table Web front
+> [vue-tables-2](https://www.npmjs.com/package/vue-tables-2) example
 
 <br>
 
