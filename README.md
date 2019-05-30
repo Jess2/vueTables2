@@ -2,6 +2,8 @@
 
 > Sample Table Web front
 
+<br>
+
 ## Stack
 - Vue.js
 - Vuex
