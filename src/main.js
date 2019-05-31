@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import { ClientTable } from "vue-tables-2";
+import VueMaterialIcon from 'vue-material-icon'
+
+Vue.component(VueMaterialIcon.name, VueMaterialIcon)
 
 Vue.config.productionTip = false
 let options = {};

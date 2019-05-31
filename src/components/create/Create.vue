@@ -27,7 +27,7 @@
 <script>
   export default {
     name: 'Create',
-    props: ['show'],
+    props: ['show', 'editUser'],
     data () {
       return {
         title : 'Create',
@@ -51,6 +51,16 @@
           this.user.explanation = '';
           this.user.image = 'https://www.netfort.com/assets/user.png';
         }
+      },
+      editUser (newValue, oldValue) {
+        if (newValue) {
+          if (newValue.isTrue === 'O') {
+            newValue.isTrue = true;
+          } else {
+            newValue.isTrue = false;
+          }
+          this.user = newValue;
+        }
       }
     },
     computed: {
@@ -62,7 +72,11 @@
         this.$emit('close');
       },
       onSave () {
-        this.$emit('save', this.user);
+        if (this.editUser) {
+          this.$emit('edit', this.user);
+        } else {
+          this.$emit('save', this.user);
+        }
       }
     },
     components: {

@@ -65,6 +65,10 @@
               .VueTables__child-row-toggler--open::before {
                 content: "-";
               }
+
+              .material-icon {
+                cursor: pointer;
+              }
             }
           }
         }

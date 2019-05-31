@@ -13,9 +13,12 @@
         <template slot="child_row" scope="props">
           {{props.row.name}}의 부가 설명 : <a :href="props.row.url" target="_blank">{{props.row.explanation}}</a>
         </template>
+        <div slot="edit" slot-scope="props" @click="onEdit(props.row)">
+          <vue-material-icon name="edit" :size="20"></vue-material-icon>
+        </div>
       </v-client-table>
     </div>
-    <create-component :show="isOpenCreatePopup" @save="saveUser" @close="closeCreatePopup"></create-component>
+    <create-component :show="isOpenCreatePopup" :editUser="editUser" @save="onSaveUser" @edit="onEditUser" @close="closeCreatePopup"></create-component>
   </div>
 </template>
 
@@ -27,7 +30,7 @@
     data () {
       return {
         title: 'JESSIE\'s vue-tables-2 Example',
-        columns: ["id", "image", "name", "age", "email", "isTrue" ], // 테이블 컬럼
+        columns: ["id", "image", "name", "age", "email", "isTrue", "edit" ], // 테이블 컬럼
         options: {
           filterByColumn: true, // 컬럼별 검색 기능
           perPage: 10, // 한 페이지에 몇 개 보여줄 지 설정
@@ -44,6 +47,7 @@
             email: 'User Email',
             isTrue: 'User isTrue',
             image: 'User Image',
+            edit: 'Edit',
           },
           sortable: ['id', 'name', 'age', 'isTrue'], // 정렬 기준에 포함시킬 데이터
           filterable: ['id', 'name', 'age', 'email', 'isTrue'], // 검색 필터에 포함시킬 데이터
@@ -61,6 +65,7 @@
         userList: [],
         isOpenCreatePopup: false,
         newUser: {},
+        editUser: {},
       }
     },
     watch: {
@@ -91,11 +96,27 @@
       closeCreatePopup () {
         this.isOpenCreatePopup = false;
       },
-      saveUser (user) {
+      onSaveUser (user) {
         this.newUser = JSON.parse(JSON.stringify(user));
         this.newUser.id = this.userList[this.userList.length - 1].id + 1;
         this.userList.push(this.newUser);
         this.isOpenCreatePopup = false;
+      },
+      onEditUser (user) {
+        console.log('uuuuuuuser', user);
+        for (let i = 0; i < this.userList.length; i++) {
+          if (user.id === this.userList[i].id) {
+            console.log('id', user.id)
+            this.userList[i] = JSON.parse(JSON.stringify(user));
+            break;
+          }
+        }
+        this.isOpenCreatePopup = false;
+      },
+      onEdit (selectedUser) {
+        console.log('selectedUser', selectedUser);
+        this.editUser = JSON.parse(JSON.stringify(selectedUser));
+        this.isOpenCreatePopup = true;
       }
     },
     components: {
