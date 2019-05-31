@@ -1,0 +1,92 @@
+.create_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: table;
+  transition: opacity .3s ease;
+  z-index: 999;
+  color: black;
+  font-size: 14px;
+
+  // 팝업창
+  .create {
+    width: 800px;
+    height: 500px;
+    border-radius: 8px;
+    background: #ffffff;
+    display: grid;
+    display: -ms-grid;
+    grid-template-areas: "title"
+    "buttons";
+    grid-template-rows: 438px 62px;
+    -ms-grid-rows: 438px 62px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    .title {
+      font-family: 'Noto Sans KR', sans-serif;
+      grid-area: title;
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding-top: 15px;
+      margin: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        //width: 346px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #4a4c58;
+      }
+
+      p {
+        color: #4a4c58;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      input {
+        margin: 10px 0;
+        padding: 5px 10px;
+      }
+    }
+
+    .buttons {
+      text-align: center;
+      grid-area: buttons;
+      -ms-grid-row: 2;
+      -ms-grid-column: 1;
+
+      .btn {
+        margin: 0 10px;
+        font-weight: 400;
+      }
+      .btn-secondary {
+        width: 130px;
+      }
+
+      button {
+        margin: 0 10px;
+      }
+    }
+  }
+}

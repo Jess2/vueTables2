@@ -2,11 +2,17 @@
   text-align: center;
   h1 {
     color: #337ab7;
+    display: block;
+    padding: 10px 0;
   }
 
   .tables {
     width: 100%;
     padding: 20px 50px;
+
+    select {
+      cursor: pointer;
+    }
 
     .VueTables {
       //display: inline-block;
@@ -14,6 +20,8 @@
 
       .row {
         display: inline-block;
+        
+
       }
 
       .table-responsive {
@@ -25,6 +33,7 @@
             th {
               span.VueTables__sort-icon {
                 float: right;
+                cursor: pointer;
               }
             }
             td {
@@ -46,6 +55,7 @@
                 margin: auto;
                 text-align: center;
                 font-size: 1.5em;
+                cursor: pointer;
               }
 
               .VueTables__child-row-toggler--closed::before {
