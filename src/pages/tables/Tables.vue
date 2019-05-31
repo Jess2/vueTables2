@@ -16,6 +16,9 @@
         <div slot="edit" slot-scope="props" @click="onEdit(props.row)">
           <vue-material-icon name="edit" :size="20"></vue-material-icon>
         </div>
+        <div slot="delete" slot-scope="props" @click="onDelete(props.row)">
+          <vue-material-icon name="delete" :size="20"></vue-material-icon>
+        </div>
       </v-client-table>
     </div>
     <create-component :show="isOpenCreatePopup" :editUser="editUser" @save="onSaveUser" @edit="onEditUser" @close="closeCreatePopup"></create-component>
@@ -30,7 +33,7 @@
     data () {
       return {
         title: 'JESSIE\'s vue-tables-2 Example',
-        columns: ["id", "image", "name", "age", "email", "isTrue", "edit" ], // 테이블 컬럼
+        columns: ["id", "image", "name", "age", "email", "isTrue", "edit", "delete" ], // 테이블 컬럼
         options: {
           filterByColumn: true, // 컬럼별 검색 기능
           perPage: 10, // 한 페이지에 몇 개 보여줄 지 설정
@@ -117,6 +120,15 @@
         console.log('selectedUser', selectedUser);
         this.editUser = JSON.parse(JSON.stringify(selectedUser));
         this.isOpenCreatePopup = true;
+      },
+      onDelete (deleteUser) {
+        console.log('delete', deleteUser)
+        for (let i = 0; i < this.userList.length; i++) {
+          if (deleteUser.id === this.userList[i].id) {
+            this.userList.splice(i, 1)
+            break;
+          }
+        }
       }
     },
     components: {

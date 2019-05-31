@@ -72,11 +72,13 @@
         this.$emit('close');
       },
       onSave () {
-        if (this.editUser) {
-          this.$emit('edit', this.user);
-        } else {
-          this.$emit('save', this.user);
-        }
+        // if (this.editUser != {}) {
+        //   this.$emit('edit', this.user);
+        // } else {
+        //   this.$emit('save', this.user);
+        // }
+
+        this.$emit('save', this.user);
       }
     },
     components: {
