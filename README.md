@@ -1,6 +1,6 @@
-# VueTables2
+# VueThirdPartyLibraryExample
 
-> [vue-tables-2](https://www.npmjs.com/package/vue-tables-2) example
+> [vue-tables-2](https://www.npmjs.com/package/vue-tables-2) & [free-transform](https://www.npmjs.com/package/vue-free-transform) example
 
 <br>
 
