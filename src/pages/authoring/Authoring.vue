@@ -23,8 +23,13 @@
             @onSelect="setSelected(element.id)"
             @update="update(element.id, $event);"
           >
-            <div class="element" :style="getElementStyles(element)">
+            <div v-if="element.type === 'figure'" class="element" :style="getElementStyles(element)">
               {{ element.text }}
+            </div>
+            <div v-if="element.type === 'title'" class="element">
+              <!-- <i class="fa fa-times-circle" @click="deleteOn('title', i-1)"></i> -->
+<!--              <img class="icon" src="/static/images/times-circle-solid.svg" @click="deleteOn('title', i-1)"/>-->
+              <input class="titleInputClass" type="text" placeholder="타이틀 텍스트" v-model="element.text">
             </div>
           </free-transform>
         </div>
@@ -47,6 +52,7 @@
         elements: [
           {
             id: "el-1",
+            type: "figure",
             x: 100,
             y: 50,
             scaleX: 1,
@@ -67,6 +73,7 @@
           },
           {
             id: "el-2",
+            type: "figure",
             x: 225,
             y: 225,
             scaleX: 1,
@@ -88,6 +95,7 @@
           },
           {
             id: "el-3",
+            type: "figure",
             x: 100,
             y: 225,
             scaleX: 1,
@@ -109,6 +117,7 @@
           },
           {
             id: "el-4",
+            type: "figure",
             x: 100,
             y: 400,
             scaleX: 1,
@@ -124,6 +133,27 @@
               height: "100%",
             },
             disableScale: false,
+            scaleForCenter: false,
+            aspectRatio: false,
+          },
+          {
+            id: "el-5",
+            type: "title",
+            x: 200,
+            y: 400,
+            scaleX: 1,
+            scaleY: 1,
+            width: 100,
+            height: 100,
+            angle: 0,
+            classPrefix: "tr3",
+            text: "el-4",
+            styles: {
+              background: "linear-gradient(135deg, #b1ea4d 0%,#459522 100%)",
+              width: "100%",
+              height: "100%",
+            },
+            disableScale: true,
             scaleForCenter: false,
             aspectRatio: false,
           }
@@ -158,6 +188,7 @@
       },
       setSelected(_id) {
         this.selectedElementId = _id;
+        console.log('setSelected', _id)
       },
     },
     components: {
