@@ -22,6 +22,7 @@
     "moment": "^2.24.0",
     "popper.js": "^1.15.0",
     "vue": "^2.5.2",
+    "vue-free-transform": "^1.0.11",
     "vue-json-excel": "^0.2.98",
     "vue-material-checkbox": "^1.2.1",
     "vue-material-icon": "^1.0.1",
