@@ -26,7 +26,7 @@
     "vue-json-excel": "^0.2.98",
     "vue-material-checkbox": "^1.2.1",
     "vue-material-icon": "^1.0.1",
-    "vue-moment": "^4.0.0",
+    "vue-moment": "^4.1.0",
     "vue-router": "^3.0.1",
     "vue-tables-2": "^1.4.70",
     "vue-time-picker": "^0.2.6",
