@@ -19,7 +19,7 @@
     "es6-promise": "^4.2.6",
     "jquery": "^3.4.0",
     "material-design-icons": "^3.0.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "popper.js": "^1.15.0",
     "vue": "^2.5.2",
     "vue-free-transform": "^1.0.11",
